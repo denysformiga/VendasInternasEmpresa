@@ -12,27 +12,29 @@ Para realizar essa missão, você terá acesso aos documentos conforme detalhado
 
 ## Arquivos
 
-Arquivo 1 - fact_leads.csv
-O Arquivo fact_sales.csv possui registros em que cada linha representa um lead no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda). Obs: Leads são potenciais clientes que entram em contato com a intenção de adquirir uma máquina.
+### Arquivo 1 - fact_leads.csv
+O arquivo fact_sales.csv possui registros em que cada linha representa um lead no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda). 
 
-Arquivo 2 - fact_sales.csv
-O Arquivo fact_sales.csv possui registros em que cada linha representa uma venda no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda).
+Obs: Leads são potenciais clientes que entram em contato com a intenção de adquirir uma máquina.
 
-Arquivo 3 - dim_agents.csv
-O Arquivo dim_agents.csv possui registros em que cada linha representa um agente. Segue abaixo o schema desta tabela:
-Agent_ID é o Id do agente comercial;
-lider é o id do líder do agente comercial;
-nivel representa o nível do agente comercial, podendo variar de 1 a 5 e define o fator multiplicativo da meta de produtividade que é baseada no nível 1;
-folga_1 representa o primeiro dia da semana em que o agente não trabalha, e consequentemente não tem meta;
-folga_2 representa o segundo dia da semana em que o agente não trabalha, e consequentemente não tem meta;
-canal representa a forma de contato em que o agente atende os leads. Cada canal possui uma meta específica.
-funcao é a descrição de que este ID representa um vendedor.
+### Arquivo 2 - fact_sales.csv
+O arquivo fact_sales.csv possui registros em que cada linha representa uma venda no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda).
 
-Arquivo 4 - dim_leaders.csv
-O Arquivo dim_leaders.csv possui registros em que cada linha representa um lider.
-Lider_ID é o Id do lider comercial;
-lider_de_operacao é o id do líder de operação do lider comercial;
-funcao é a descrição de que este ID representa um líder.
+### Arquivo 3 - dim_agents.csv
+O arquivo dim_agents.csv possui registros em que cada linha representa um agente. Segue abaixo o schema desta tabela:
+- Agent_ID é o Id do agente comercial;
+- lider é o id do líder do agente comercial;
+- nivel representa o nível do agente comercial, podendo variar de 1 a 5 e define o fator multiplicativo da meta de produtividade que é baseada no nível 1;
+- folga_1 representa o primeiro dia da semana em que o agente não trabalha, e consequentemente não tem meta;
+- folga_2 representa o segundo dia da semana em que o agente não trabalha, e consequentemente não tem meta;
+- canal representa a forma de contato em que o agente atende os leads. Cada canal possui uma meta específica.
+- funcao é a descrição de que este ID representa um vendedor.
+
+### Arquivo 4 - dim_leaders.csv
+O arquivo dim_leaders.csv possui registros em que cada linha representa um lider.
+- Lider_ID é o Id do lider comercial;
+- lider_de_operacao é o id do líder de operação do lider comercial;
+- funcao é a descrição de que este ID representa um líder.
 
 
 
@@ -45,16 +47,16 @@ ex: Um agente do canal whatsapp, do nível 2 tem como meta diária 4*1,1 = 4,4.
 Abaixo seguem os valores dos fatores para o cálculo da meta.
 
 Meta por nível:
-nível 1 = 100%;
-nível 2 = 110%;
-nível 3 = 120%;
-nível 4 = 125%;
-nível 5 = 130%.
+- nível 1 = 100%;
+- nível 2 = 110%;
+- nível 3 = 120%;
+- nível 4 = 125%;
+- nível 5 = 130%.
 
 Meta diária por canal para o nível 1:
-chat = 3;
-whatsapp = 4;
-telefone = 3,7.
+- chat = 3;
+- whatsapp = 4;
+- telefone = 3,7.
 
 Os agentes possuem metas apenas nos dias em que não possuem folga. Ou seja, no dia de folga, a meta é zero. Em feriados nacionais também não há meta, porém há a prática de realização da escala extra, em que pessoas trabalham com hora-extra para aumentar o resultado mensal.
 
