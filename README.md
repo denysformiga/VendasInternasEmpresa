@@ -13,15 +13,15 @@ Para realizar essa missão, você terá acesso aos documentos conforme detalhado
 ## Arquivos
 
 ### Arquivo 1 - fact_leads.csv
-O arquivo fact_sales.csv possui registros em que cada linha representa um lead no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda). 
-
+O arquivo fact_sales.csv possui registros em que cada linha representa um lead no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda).  \
 Obs: Leads são potenciais clientes que entram em contato com a intenção de adquirir uma máquina.
 
 ### Arquivo 2 - fact_sales.csv
 O arquivo fact_sales.csv possui registros em que cada linha representa uma venda no mês de janeiro de 2077 com dados de Agent_ID (id do vendedor responsável pela venda) e Date (data da venda).
 
 ### Arquivo 3 - dim_agents.csv
-O arquivo dim_agents.csv possui registros em que cada linha representa um agente. Segue abaixo o schema desta tabela:
+O arquivo dim_agents.csv possui registros em que cada linha representa um agente. \
+Segue abaixo o schema desta tabela:
 - Agent_ID é o Id do agente comercial;
 - lider é o id do líder do agente comercial;
 - nivel representa o nível do agente comercial, podendo variar de 1 a 5 e define o fator multiplicativo da meta de produtividade que é baseada no nível 1;
@@ -40,8 +40,7 @@ O arquivo dim_leaders.csv possui registros em que cada linha representa um lider
 
 ## Regras de negócio
 
-A meta possui sua menor granularidade na unidade de DIA. O cálculo da meta diária é dado
-multiplicando o fator multiplicativo do nível pela meta diária do canal.
+A meta possui sua menor granularidade na unidade de DIA. O cálculo da meta diária é dado multiplicando o fator multiplicativo do nível pela meta diária do canal. \
 ex: Um agente do canal whatsapp, do nível 2 tem como meta diária 4*1,1 = 4,4.
 
 Abaixo seguem os valores dos fatores para o cálculo da meta.
@@ -67,11 +66,11 @@ Para agentes que trabalham no domingo, há uma regra em que após três domingos
 
 Com base nos Arquivos e descrições, siga os seguintes passos:
 
-1. Em Python, com os arquivos fornecidos, crie uma tabela de metas para cada agente para cada dia do mês de janeiro de 2077. Não há meta para folgas fixas nem para feriados.
-A tabela deve conter pelo menos as colunas de Data (ex: 2077-01-01), Agent_ID (ex: 1), dia da semana (ex: segunda-feira), Meta (ex: 4), trabalha (ex: True, False) e deve respeitar essa granularidade. Obs: Nos dias em que um determinado agente não possui meta, a linha deve estar presente na tabela com o valor da coluna Meta = 0 e trabalha = False.
+1. Em Python, com os arquivos fornecidos, crie uma tabela de metas para cada agente para cada dia do mês de janeiro de 2077. Não há meta para folgas fixas nem para feriados. A tabela deve conter pelo menos as colunas de Data (ex: 2077-01-01), Agent_ID (ex: 1), dia da semana (ex: segunda-feira), Meta (ex: 4), trabalha (ex: True, False) e deve respeitar essa granularidade. \
+Obs: Nos dias em que um determinado agente não possui meta, a linha deve estar presente na tabela com o valor da coluna Meta = 0 e trabalha = False.
 
-2. Construa uma tabela relacionando a tabela da tarefa anterior com o resultado das tabelas de vendas e leads para cada dia de cada vendedor.
+3. Construa uma tabela relacionando a tabela da tarefa anterior com o resultado das tabelas de vendas e leads para cada dia de cada vendedor.
 
-3. Utilizando a ferramenta que julgar mais adequada, crie uma dashboard operacional, para que os vendedores e líderes possam acompanhar seus resultados de forma eficiente, fornecendo insights e insumos para melhorarem dia após dia.
+4. Utilizando a ferramenta que julgar mais adequada, crie uma dashboard operacional, para que os vendedores e líderes possam acompanhar seus resultados de forma eficiente, fornecendo insights e insumos para melhorarem dia após dia.
 
-4. Na dashboard, crie uma lista contendo o ID de cada agente e seu respectivo atingimento (vendas/meta) em porcentagem, para apuração da meta.
+5. Na dashboard, crie uma lista contendo o ID de cada agente e seu respectivo atingimento (vendas/meta) em porcentagem, para apuração da meta.
